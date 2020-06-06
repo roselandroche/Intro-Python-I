@@ -32,8 +32,11 @@ import calendar
 from datetime import datetime
 
 def cal(month = 6, year = 2020):
-  #if only 1 arg, print calender for month(arg) in current year
-  #if 2 args, print cal for specified month and year
-  #else print message clarifying format required for input and exit program
-
-cal()
+  if month >= 1 and month <= 12 and type(year) == int:
+    c = calendar.TextCalendar()
+    c.str = c.formatmonth(year, month)
+    print(c.str)
+  else:
+    print('Month must be integer in range 1 - 12, year must be valid integer.')
+  
+cal(1, 'future')
