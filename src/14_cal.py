@@ -31,7 +31,9 @@ import sys
 import calendar
 from datetime import datetime
 
-user_input = input("Enter month, year: ").split(",")
+def cal(month = 6, year = 2020):
+  #if only 1 arg, print calender for month(arg) in current year
+  #if 2 args, print cal for specified month and year
+  #else print message clarifying format required for input and exit program
 
-if user_input:
-  return datetime.month
+cal()
