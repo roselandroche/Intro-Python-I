@@ -1,16 +1,17 @@
 # Experiment with scopes in Python.
 # Good reading: https://www.programiz.com/python-programming/global-local-nonlocal-variables
 
-# When you use a variable in a function, it's local in scope to the function.
+# When you use a variable in a function, it's local in scope to the function. 
 x = 12
 
 def change_x():
     x = 99
+    print(f'In function: x = {x}')
 
 change_x()
 
 # This prints 12. What do we have to modify in change_x() to get it to print 99?
-print(x)
+print(f'Outside function x = {x}')
 
 
 # This nested function has a similar problem.
@@ -20,6 +21,7 @@ def outer():
 
     def inner():
         y = 999
+        print(f'innermost y = {y}')
 
     inner()
 
