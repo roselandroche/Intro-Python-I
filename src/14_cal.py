@@ -3,7 +3,7 @@ The Python standard library's 'calendar' module allows you to
 render a calendar to your terminal.
 https://docs.python.org/3.6/library/calendar.html
 
-Write a program that accepts user input of the form
+Write a program that accepts user input of the form 
   `14_cal.py [month] [year]`
 and does the following:
  - If the user doesn't specify any input, your program should
@@ -30,3 +30,13 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+def cal(month = 6, year = 2020):
+  if month >= 1 and month <= 12 and type(year) == int:
+    c = calendar.TextCalendar()
+    c.str = c.formatmonth(year, month)
+    print(c.str)
+  else:
+    print('Month must be integer in range 1 - 12, year must be valid integer.')
+  
+cal(1, 'future')
